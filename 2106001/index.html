@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>实验</title>
+        <meta name="author" content="Dg_Han">
+        <meta name="keywords" content="BART, boredom, risk taking, SBPS">
+        <meta name="robots" content="none">
+        <link rel="stylesheet" type="text/css" href="./style/style.css">
+
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
+        <script type="text/javascript" src="./script/UI.js"></script>
+        <script type="text/javascript" src="./script/hotkey.js"></script>
+        <script type="text/javascript" src="./data/settings.json"></script>
+        <script type="text/javascript" src="./script/main.js"></script>
+    </head>
+
+    <body>
+        <div id="welcome">
+            <h1>欢迎参加实验！</h1>
+            <p>指导语：接下来你要完成一项给气球充气的任务。<br>
+                每个气球充气次数的上限是128，<font color="red">且每次充气都有相等的概率会爆炸。</font><br>
+                你可以在气球爆炸前停止充气，这将得到与充气次数成正比的收益；<br>
+                但一旦气球爆炸，该气球的收益将会清零。<br>
+                可以通过鼠标左键单击充气按钮进行充气，<br>
+                也可以通过键盘空格键进行充气。<br>
+                停止充气请鼠标左键单击结束充气按钮，<br>
+                或按回车键结束充气。<br>
+                在每个充气任务之间还会呈现一些描述性的句子，<br>
+                请你根据当前的状态对句子进行评分。1为极不符合，7为极为符合。<br>
+                推荐在分辨率在800*600以上的屏幕区域上进行实验。</p>
+            <div align="center"><button type="button" id="start" onclick="BART()">开始实验</button></div>
+        </div>
+        
+        <div id="bart" style="display:none">
+            <div class="left" align="center"><canvas id="balloon" width="550px" height="550px"></canvas></div>
+            <div class="right" align="center">
+                <div>
+                    <p id="total"></p>
+                    <p id="trial"></p>
+                </div>
+                <div>
+                    <button type="button" id="pump" onclick="pump()">充气</button>
+                    <button type="button" onclick="SBPS()">结束充气</button>
+                </div>
+            </div>
+        </div>
+        <div id="sbps" style="display:none">
+            <p id="sbps_p" style="margin-top:100px; margin-bottom:50px"></p>
+            <div style="width:100%">
+                <div class="tenth" style="margin-left:15%"><label><input type="radio" name="sbps_s" value="1">1<br>极不符合</label></div>
+                <div class="tenth"><label><input type="radio" name="sbps_s" value="2">2</label></div>
+                <div class="tenth"><label><input type="radio" name="sbps_s" value="3">3</label></div>
+                <div class="tenth"><label><input type="radio" name="sbps_s" value="4">4</label></div>
+                <div class="tenth"><label><input type="radio" name="sbps_s" value="5">5</label></div>
+                <div class="tenth"><label><input type="radio" name="sbps_s" value="6">6</label></div>
+                <div class="tenth" style="margin-right:15%"><label><input type="radio" name="sbps_s" value="7">7<br>极为符合</label></div>
+            </div>
+           <div align="center" style="width:100%"> <button type="button" onclick="BART()">确认</button> </div>
+        </div>
+        <div id="end" style="display:none">
+            <p>实验结束，感谢您的参与！在确定保存数据文件后即可关闭本页面</p>
+        </div>
+    </body>
+</html>

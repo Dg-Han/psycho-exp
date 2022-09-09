@@ -1,0 +1,21 @@
+h1, p{
+    text-align: center;
+}
+canvas {
+    margin: 25px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+.left{
+    float: left;
+    width: 75%;
+}
+.right{
+    float: left;
+    width: 25%;
+}
+.tenth{
+    float:left;
+    width: 10%;
+}
