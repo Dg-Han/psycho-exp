@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Stroop</title>
+        <meta name="author" content="Dg_Han">
+        <meta name="robots" content="none">
+        <link rel="stylesheet" type="text/css" href="./style/style.css">
+
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/underscore.js/1.13.4/underscore.js"></script>
+        <script src="./script/hotkey.js"></script>
+        <script src="./script/UI.js"></script>
+        <script src="./script/main.js"></script>
+    </head>
+
+    <body>
+        <div id="welcome">
+            <h1>欢迎参加本实验！</h1>
+            <p>请注视屏幕正中央，此处会相继呈现一系列带有颜色的汉字。在每个字出现后，请你对其颜色进行反应。<br>
+                如果字的颜色是“红色”，请按下“D”键；<br>
+                如果字的颜色是“绿色”，请按下“F”键；<br>
+                如果字的颜色是“蓝色”，请按下“J”键；<br>
+                如果字的颜色是“黄色”，请按下“K”键；<br>
+                请在保证正确按键反应的前提下，尽可能快地对字的颜色做出反应。明白以上说明后，按空格键开始练习。
+            </p>
+        </div>
+        <div id="prepare" style="display:none">
+            <div><canvas id="focus"></canvas></div>
+        </div>
+        <div id="trial" style="line-height:500px;display:none">
+            <p id="char" style="vertical-align:middle;font-size:xx-large"></p>
+        </div>
+        <div id="result" style="display:none">
+            <p id="r"></p>
+        </div>
+        <div id="end" style="display:none">
+            <p>实验结束，感谢您的参与！在确定保存数据文件后即可关闭本页面</p>
+            <hr>
+            <p id="explain"></p>
+        </div>
+    </body>
+</html>
