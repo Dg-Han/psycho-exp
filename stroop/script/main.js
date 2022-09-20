@@ -18,7 +18,7 @@ $.ajax({
     url:"https://dg-han.github.io/psycho-exp/stroop/data/settings.json",
     dataType:"json",
     success:function(data){
-        settings=JSON.parse(data);
+        settings=data;
     },
 });
 
