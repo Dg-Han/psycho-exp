@@ -20,7 +20,9 @@ $.ajax({
     success:function(data){
         settings=JSON.parse(data);
     },
-})
+});
+
+alert(settings);
 
 var arr=_.range(72);
 var tr_arr=arr.sort(function(){return Math.random()-0.5});
