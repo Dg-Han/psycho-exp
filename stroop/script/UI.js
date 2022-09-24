@@ -2,8 +2,14 @@
 
 function set_stroop(trial){
     var p=$("#char").get(0);
-    p.innerText=settings[trial].text;
-    p.style.color=settings[trial].color;
+    if (prcss=="frm"){
+        p.innerText=settings[trial].text;
+        p.style.color=settings[trial].color;
+    }
+    else if (prcss=="exe"){
+        p.innerText=exe_set[trial].text;
+        p.style.color=exe_set[trial].color;
+    }
 }
 
 function set_focus(){
